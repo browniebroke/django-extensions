@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import django
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.db.models import UniqueConstraint
@@ -475,7 +476,8 @@ class SqlDiff(models.Model):
     creator = models.CharField(max_length=20, null=True, blank=True)
 
     class Meta:
-        index_together = ['number', 'creator']
+        if django.VERSION < (5, 1):
+            index_together = ['number', 'creator']
 
 
 class SqlDiffIndexes(models.Model):
