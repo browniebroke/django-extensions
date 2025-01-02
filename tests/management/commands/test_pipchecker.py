@@ -13,6 +13,7 @@ from io import StringIO
 from pip._internal.exceptions import InstallationError
 
 
+@pytest.mark.timeout(60)
 class PipCheckerTests(TestCase):
 
     def test_pipchecker_when_requirements_file_does_not_exist(self):

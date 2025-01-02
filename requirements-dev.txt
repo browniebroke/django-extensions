@@ -4,6 +4,7 @@ django_pdb
 python-dateutil
 pytest-django
 pytest-cov
+pytest-timeout
 factory-boy
 requests
 pygments
